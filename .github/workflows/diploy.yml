@@ -12,9 +12,6 @@ jobs:
       - name: Check Out Repo
         uses: actions/checkout@v2
 
-      - name: Prepare Dockerfile
-        run: cp ./docker/Dockerfile.user ./Dockerfile
-
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
@@ -25,7 +22,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./docker/Dockerfile
+          file: ./docker/Dockerfile.user
           push: true
           tags: shubhamo7/mynextapp:latest
 
