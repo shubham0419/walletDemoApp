@@ -44,19 +44,19 @@ export const AddMoney = ({ user }: addMoneyProp) => {
                 <Button onClick={async () => {
                     const res = await createOnRampTransaction(provider, value)
                     // window.location.href = redirectUrl || "";
-                    if (res.message == "Done") {
-                        try {
-                            let ans = await axios.post("http://localhost:3003/hdfcWebhook", {
-                                token: res.token,
-                                user_identifier: user,
-                                amount: value.toString()
-                            })
-                            console.log(ans);
-                        } catch (error) {
-                            console.log(error);
-                        }
+                    // if (res.message == "Done") {
+                    //     try {
+                    //         let ans = await axios.post("http://localhost:3003/hdfcWebhook", {
+                    //             token: res.token,
+                    //             user_identifier: user,
+                    //             amount: value.toString()
+                    //         })
+                    //         console.log(ans);
+                    //     } catch (error) {
+                    //         console.log(error);
+                    //     }
 
-                    }
+                    // }
 
                 }}>
                     Add Money
